@@ -1,0 +1,291 @@
+/* clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+html {
+    /* prevent webkit and ms mobile browsers from resizing text */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+    height: 100%;
+}
+
+body {
+    font-family: "HelveticaNeue", Arial, Helvetica, sans-serif;
+    height: 100%;
+}
+
+a:link {
+    /* change the tap highlight color in webkit browsers */
+    -webkit-tap-highlight-color: rgba(0,0,0,.2);
+}
+
+.standalone * {
+    /* prevent press and hold context menus in standalone mode */
+    -webkit-touch-callout: none;
+}
+
+#tab_bar, .top_bar {
+    /* prevent users from copy/pasting tab bar text in webkit browsers */
+    -webkit-user-select: none;
+}
+
+#tab_bar {
+    background: #555555; /* Old browsers */
+    background: -moz-linear-gradient(top,  #555555 0%, #333333 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555555), color-stop(100%,#333333)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #555555 0%,#333333 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #555555 0%,#333333 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #555555 0%,#333333 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #555555 0%,#333333 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    zoom: 1; /* hasLayout fix */
+
+    border-top: 1px solid #222222;
+
+    /* force above our full height pages */
+    z-index: 9999;
+}
+
+#tab_bar:before, #tab_bar:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+#tab_bar:after {
+    clear: both;
+}
+
+#tab_bar li {
+    display: inline;
+    float: left;
+    width: 20%;
+
+    background-image: url("../images/noise.png");
+}
+
+#tab_bar a {
+    color: #bbbbbb;
+    display: block;
+    font-size: 0.7em;
+    font-weight: bold;
+    height: 5.6em;
+    overflow: hidden;
+    padding-top: .5em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    border-right: 1px solid #555555;
+    border-left: 1px solid #333333;
+
+    text-shadow: 0px 2px #000;
+}
+
+#tab_bar .icon {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    margin: .4em 0 .6em 0;
+
+    pointer-events:none;
+
+    background-image: url("../images/tab_bar_icons.png");
+
+    background-size: 150px;
+}
+
+#settings_icon  { background-position:    0px 0px; }
+#favorites_icon { background-position:  -30px 0px; }
+#routes_icon    { background-position:  -60px 0px; }
+#invites_icon   { background-position:  -90px 0px; }
+#lists_icon     { background-position: -120px 0px; }
+
+.tab_selected #settings_icon  { background-position:    0px -30px; }
+.tab_selected #favorites_icon { background-position:  -30px -30px; }
+.tab_selected #routes_icon    { background-position:  -60px -30px; }
+.tab_selected #invites_icon   { background-position:  -90px -30px; }
+.tab_selected #lists_icon     { background-position: -120px -30px; }
+
+#tab_bar li:first-child a {
+    border-left: none;
+}
+
+#tab_bar li:last-child a {
+    border-right: none;
+}
+
+#tab_bar .tab_selected a {
+    color: #ffffff;
+    border: none;
+
+    box-shadow: inset 0px 0px 16px #000;
+
+    background: #222222; /* Old browsers */
+    background: -moz-linear-gradient(top,  #222222 0%, #444444 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222222), color-stop(100%,#444444)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #222222 0%,#444444 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #222222 0%,#444444 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #222222 0%,#444444 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #222222 0%,#444444 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222222', endColorstr='#444444',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+/* Pages */
+#pages {
+    height: 100%;
+    position: relative;
+
+    /* prevent momentary scrollbar when using sliding transition */
+    overflow-x: hidden;
+}
+
+.page_wrapper {
+    display: none;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.content_wrapper {
+    padding: 1.75em;
+    padding-bottom: 6.5em;
+}
+
+.page_wrapper {
+    background-color: #e0e0e0;
+}
+
+#pages > div.current {
+    display: block;
+}
+
+/* top bar */
+.top_bar {
+    height: 2.6em;
+
+    background: #555555; /* Old browsers */
+    background: -moz-linear-gradient(top,  #555555 0%, #222222 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555555), color-stop(100%,#222222)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #555555 0%,#222222 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #555555 0%,#222222 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #555555 0%,#222222 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #555555 0%,#222222 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+
+    color: white;
+    text-shadow: 0px 2px black;
+}
+
+.top_bar .back {
+    color: #aaa;
+    float: left;
+    width: 2.6em;
+    height: 2.6em;
+    background-color: #666;
+    display: none;
+}
+
+.top_bar h1 {
+    float: left;
+    padding: .8em;
+}
+
+.back.hasBack {
+    color: white;
+    display: block;
+}
+
+/* transitions */
+.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 300ms;
+}
+
+/* fade */
+
+.fade.in {
+    -webkit-animation-name: fade-in;
+    z-index: 10;
+}
+
+.fade.out {
+    z-index: 0;
+}
+
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* slide */
+.push.out {
+    -webkit-animation-name: outToLeft;
+}
+
+.push.in {
+    -webkit-animation-name: inFromRight;
+}
+
+@-webkit-keyframes outToLeft {
+    from { -webkit-transform: translateX(0); }
+    to { -webkit-transform: translateX(-100%); }
+}
+
+@-webkit-keyframes inFromRight {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+@-webkit-keyframes inFromLeft {
+    from { -webkit-transform: translateX(-100%); }
+    to { -webkit-transform: translateX(0); }
+}
+
+.push.in.reverse {
+    -webkit-animation-name: inFromLeft;
+}
+
+@-webkit-keyframes outToRight {
+    from { -webkit-transform: translateX(0%); }
+    to { -webkit-transform: translateX(100%); }
+}
+
+.push.out.reverse {
+    -webkit-animation-name: outToRight;
+}
+
+.show.in {
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 10ms;
+}
