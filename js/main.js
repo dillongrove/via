@@ -45,6 +45,11 @@ $(document).ready(function(){
     })
 
     transition($("#routes_page"), "show");
+
+    var source   = $("#test-template").html();
+    var template = Handlebars.compile(source);
+    var context  = {dillon: "mike"};
+    var html     = template(context);
 })
 
 function transition(toPage, type, reverse) {

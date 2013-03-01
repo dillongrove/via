@@ -60,7 +60,7 @@
                     <a class="back"></a>
                     <h1>Settings</h1>
                 </div>
-                <div class="content_wrapper">
+                <div class="padded_content_wrapper">
                     <a href="#settings_page-2" class="page_link">Page 1-2</a>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                     <a class="back"></a>
                     <h1>Favorites</h1>
                 </div>
-                <div class="content_wrapper">
+                <div class="padded_content_wrapper">
                 </div>
             </div>
             <div id="routes_page" class="page_wrapper">
@@ -77,7 +77,7 @@
                     <a class="back"></a>
                     <h1>Routes</h1>
                 </div>
-                <div class="content_wrapper">
+                <div class="padded_content_wrapper">
                     A bunch of content!
                 </div>
             </div>
@@ -86,16 +86,37 @@
                     <a class="back"></a>
                     <h1>Invites</h1>
                 </div>
-                <div class="content_wrapper">
+                <div class="padded_content_wrapper">
                 </div>
             </div>
-            <div id="lists_page" class="page_wrapper">
+            <div id="lists_page" class="page_wrapper bar_list_page">
                 <div class="top_bar cf">
                     <a class="back"></a>
                     <h1>Lists</h1>
                 </div>
-                <div class="content_wrapper">
-                </div>
+                <ul class="bar_list">
+                    <li>
+                        <h2>Work Friends</h2>
+                        <span>Brandon, Tomer, Arthur, Evan, Chris, Liz</span>
+                    </li>
+                    <li>
+                        <h2>College Friends (3)</h2>
+                        <span>Mike, Peter, Nick</span>
+                    </li>
+                    <li>
+                        <h2>IxD Friends (3)</h2>
+                        <span>Elina, Soyeon, Lisa</span>
+                    </li>
+                                        <li>
+                        <h2>Work Friends</h2>
+                        <span>Brandon, Tomer, Arthur, Evan, Chris, Liz</span>
+                    </li>
+                    <li>
+                        <h2>College Friends (3)</h2>
+                        <span>Mike, Peter, Nick</span>
+                    </li>
+
+                </ul>
             </div>
 
             <!-- secondary pages -->
@@ -109,5 +130,10 @@
 
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+
+        <!-- handlebars templates -->
+        <script id="test-template" type="text/x-handlebars-template">
+            <h2>{{ dillon }}</h2>
+        </script>
     </body>
 </html>
