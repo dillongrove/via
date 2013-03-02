@@ -12,11 +12,16 @@ if(navigator.standalone != undefined && !!!navigator.standalone){
  */
 var Via = {
     lists: [
-        { name: "Work Friends (6)",
-          people: "Brandon, Tomer, Arthur, Evan, Chris, Liz" },
-        { name: "College Friends (3)",
-          people: "Mike, Peter, Nick" },
-        { name: "Interaction Design Friends (3)",
+        { name: "Work Friends",
+          length: 6,
+          people: "Brandon, Tomer, Arthur, Evan, Chris, Liz" 
+        },
+        { name: "College Friends",
+          length: 3,
+          people: "Mike, Peter, Nick" 
+        },
+        { name: "Interaction Design Friends",
+          length: 3,
           people: "Elina, Soyeon, Lisa"}
     ],
 }
