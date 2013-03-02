@@ -255,6 +255,8 @@ a:link {
     
     border-top: 1px solid #f9f9f9;
     border-bottom: 1px solid #a9a9a9;
+
+    position: relative;
 }
 
 .bar_list li a {
@@ -277,6 +279,19 @@ a:link {
 .bar_list_page {
     background-color: #333;
     box-shadow: inset 0px 0px 14px #000;
+}
+
+.chevron {
+    background-image: url("../images/chevrons.png");
+    width: 15px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    background-position: center right;
+    background-size: 30px;
+
+    right: 1em;
 }
 
 /* transitions */
