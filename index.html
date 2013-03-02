@@ -94,29 +94,6 @@
                     <a class="back"></a>
                     <h1>Lists</h1>
                 </div>
-                <ul class="bar_list">
-                    <li>
-                        <h2>Work Friends</h2>
-                        <span>Brandon, Tomer, Arthur, Evan, Chris, Liz</span>
-                    </li>
-                    <li>
-                        <h2>College Friends (3)</h2>
-                        <span>Mike, Peter, Nick</span>
-                    </li>
-                    <li>
-                        <h2>IxD Friends (3)</h2>
-                        <span>Elina, Soyeon, Lisa</span>
-                    </li>
-                                        <li>
-                        <h2>Work Friends</h2>
-                        <span>Brandon, Tomer, Arthur, Evan, Chris, Liz</span>
-                    </li>
-                    <li>
-                        <h2>College Friends (3)</h2>
-                        <span>Mike, Peter, Nick</span>
-                    </li>
-
-                </ul>
             </div>
 
             <!-- secondary pages -->
@@ -132,8 +109,17 @@
         <script type="text/javascript" src="js/main.js"></script>
 
         <!-- handlebars templates -->
-        <script id="test-template" type="text/x-handlebars-template">
-            <h2>{{ dillon }}</h2>
+        <script id="lists_template" type="text/x-handlebars-template">
+            <ul class="bar_list">
+                {{#each this}}
+                    <li>
+                        <a> 
+                            <h2>{{ this.name }}</h2>
+                            <span>{{ this.people }}</span>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
         </script>
     </body>
 </html>

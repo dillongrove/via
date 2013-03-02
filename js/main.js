@@ -3,8 +3,22 @@ Modernizr.addTest('standalone', function(){
 });
 
 if(navigator.standalone != undefined && !!!navigator.standalone){
-    //show notification
+    // TODO: show notification telling users to install app as standalone
     return;
+}
+
+/* Global object for storing data, used to simluate a server for the time being
+ * This is, after all, only a prototype :)
+ */
+var Via = {
+    lists: [
+        { name: "Work Friends (6)",
+          people: "Brandon, Tomer, Arthur, Evan, Chris, Liz" },
+        { name: "College Friends (3)",
+          people: "Mike, Peter, Nick" },
+        { name: "Interaction Design Friends (3)",
+          people: "Elina, Soyeon, Lisa"}
+    ],
 }
 
 $(document).ready(function(){
@@ -18,7 +32,7 @@ $(document).ready(function(){
         var nextPage = $(e.target.hash);
         transition(nextPage, "fade");
 
-        /* why did I do this again? */
+        /* not yet sure if ill need this for styling reasons */
         $("#tab_bar").attr("class", e.target.hash.slice(1));
 
         /* remove selected class from all tabs... */
@@ -37,7 +51,9 @@ $(document).ready(function(){
         transition(nextPage, "push");
     })
 
+    /* bind back button click event */
     $("#pages").on("click", ".back", function(){
+        /* find the last page in history, and transition to it, if possible */
         var lastPage = visits.back();
         if(lastPage) {
             transition(lastPage, "push", true);
@@ -46,10 +62,12 @@ $(document).ready(function(){
 
     transition($("#routes_page"), "show");
 
-    var source   = $("#test-template").html();
+    var source   = $("#lists_template").html();
     var template = Handlebars.compile(source);
-    var context  = {dillon: "mike"};
+    var context  = Via.lists;
     var html     = template(context);
+
+    $("#lists_page").append(html);
 })
 
 function transition(toPage, type, reverse) {
