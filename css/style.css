@@ -322,6 +322,26 @@ a:link {
     background-size: 30px;
 }
 
+/* picture box */
+.picture_box {
+    height: 6em;
+    width: 9.2em;
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 8px #aaa;
+    display: inline-block;
+}
+
+.picture_box .picture {
+    display: block;
+    background-color: #ccc;
+    height: 4em;
+}
+
+.picture_box .info {
+    text-align: left;
+    padding: .6em;
+}
+
 /* transitions */
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;

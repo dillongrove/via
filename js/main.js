@@ -164,6 +164,7 @@ function load_content(nextPage, e){
     var page_to_load = event_target.hash.slice(1);
     var load_target;
     var content;
+    var callback;
 
     switch(page_to_load) {
         case "lists_page":
@@ -174,11 +175,17 @@ function load_content(nextPage, e){
             var list_id = $(event_target).data().id;
             content = get_html("list_detail_template", Via.lists[list_id]);
             load_target = $(nextPage);
+            callback = function(){
+                console.log("callback");
+            }
             break;
     }
 
     if(content){
         $(load_target).html(content);
+        if(callback){
+            callback();
+        }
     }
 }
 
