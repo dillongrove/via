@@ -123,7 +123,7 @@ $(document).ready(function(){
         e.preventDefault();
         if($(this).hasClass("active")){
             /* a tab that is already active was clicked, return */
-            return;
+            return false;
         } else {
             var tab_wrapper = $(this).parents(".tabbed_content_wrapper");
 
