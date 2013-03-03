@@ -78,9 +78,29 @@
                     <h1>Routes</h1>
                 </div>
                 <div class="padded_content_wrapper">
-                    A bunch of content!
+                   <!-- ADD 	LOGO -->
+									<ul id ="routes_form">
+										<li>From <input class="inputbox" type="text" name="from">
+												<img class="side_button" src="images/location.png">
+										</li><br>
+										<li>Via<br><br>
+												<ul id= "via_buttons" class="cf">
+													<li><img class="via_icons" src="images/restaurant.png"></li>
+													<li><img class="via_icons" src="images/gas.png"></li>
+													<li><img class="via_icons" src="images/shopping.png"></li>
+													<li><img class="via_icons" src="images/pharmacy.png"></li>
+												</ul>
+												<input id="via_search" type="text" name="search">
+										</li> <br>
+										<li>To <input class="inputbox" type="text" name="to">
+											<img class="side_button" src="images/favorites.png">
+										</li><br>
+										<li> <a href="#map_page"><input type="submit" value="Route"></a> </li>
+									</ul>
                 </div>
             </div>
+						<div id = "map_page" class="page_wrapper">
+						</div>
             <div id="invites_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
