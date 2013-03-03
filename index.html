@@ -120,6 +120,10 @@
                 
             </div>
 
+            <div id="invite_detail" class="page_wrapper">
+
+            </div>
+
         </div>
 
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -153,6 +157,22 @@
                     {{> person}}
                 {{/each}}
             </div>
+        </script>
+
+        <script id="invites_inbox_template" type="text/x-handlebars-template">
+            <ul class="bar_list">
+                {{#each this}}
+                    <li>
+                        <a href="#list_detail" class="page_link"> 
+                            <h2>{{#commaSeparatedNames people}}{{/commaSeparatedNames}}</h2>
+                            <span>
+                                {{place}} {{time}}
+                            </span>
+                            <div class="chevron chev-right"></div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
         </script>
 
         <script id="person_partial" type="text/x-handlebars-template">

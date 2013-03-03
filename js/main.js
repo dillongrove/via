@@ -73,6 +73,42 @@ var Via = {
           ]
         }
     ],
+    invites: [
+        { place: "Rose Tea Cafe",
+          time: "today at 12:30pm",
+          people: [
+            { first: "Elina",
+              last: "Kim",
+              pic_url: "elina.jpg"
+            },
+            { first: "Soyeon",
+              last: "Hwang",
+              pic_url: "soyeon.jpg"
+            },
+            { first: "Lisa",
+              last: "Imas",
+              pic_url: "lisa.jpg"
+            }
+          ]
+        },
+        { place: "Panera",
+          time: "tomorrow at 1:30pm",
+          people: [
+            { first: "Mike",
+              last: "Darcy",
+              pic_url: "mike.jpg"
+            },
+            { first: "Peter",
+              last: "Marino",
+              pic_url: "peter.jpg"
+            },
+            { first: "Nick",
+              last: "LaGrow",
+              pic_url: "nick.jpg"
+            }
+          ]
+        }
+    ]
 }
 
 $(document).ready(function(){
@@ -209,7 +245,7 @@ function load_content(nextPage, e){
             load_target = $(nextPage);
             break;
         case "invites_page":
-            content = get_html("lists_template", Via.lists);
+            content = get_html("invites_inbox_template", Via.invites);
             load_target = $(nextPage).find("#inbox");
     }
 
