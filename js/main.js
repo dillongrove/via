@@ -34,9 +34,6 @@ $(document).ready(function(){
         /* reset visit history on new tab */
         visits.clear();
 
-        var nextPage = $(e.target.hash);
-        transition(nextPage, "fade");
-
         /* not yet sure if ill need this for styling reasons */
         $("#tab_bar").attr("class", e.target.hash.slice(1));
 
@@ -47,11 +44,15 @@ $(document).ready(function(){
 
         /* ..and add it back to the one that was just clicked */
         $(e.target).parent().addClass("tab_selected");
+
+        var nextPage = $(e.target.hash);
+        transition(nextPage, "fade");
     });
 
     /* bind all other page links */
     $("#pages").on("click", "a.page_link", function(e){
         e.preventDefault();
+
         var nextPage = $(e.target.hash);
         transition(nextPage, "push");
     });
@@ -66,8 +67,10 @@ $(document).ready(function(){
         }
     })
 
+    /* on app start, show the routes page */
     transition($("#routes_page"), "show");
 
+    /* testing handlebars rendering, will remove later */
     var source   = $("#lists_template").html();
     var template = Handlebars.compile(source);
     var context  = Via.lists;
