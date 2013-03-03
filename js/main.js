@@ -50,15 +50,16 @@ $(document).ready(function(){
     });
 
     /* bind all other page links */
-    $("a.page_link").click(function(e){
+    $("#pages").on("click", "a.page_link", function(e){
         e.preventDefault();
         var nextPage = $(e.target.hash);
         transition(nextPage, "push");
-    })
+    });
 
     /* bind back button click event */
-    $("#pages").on("click", ".back", function(){
+    $("#pages").on("click", ".back", function(e){
         /* find the last page in history, and transition to it, if possible */
+        e.preventDefault();
         var lastPage = visits.back();
         if(lastPage) {
             transition(lastPage, "push", true);

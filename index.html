@@ -105,6 +105,16 @@
                 <div class="padded_content_wrapper">
                 </div>
             </div>
+
+            <div id="lists_detail" class="page_wrapper">
+                <div class="top_bar">
+                    <a class="back"></a>
+                    <h1>List Details</h1>
+                </div>
+                <div class="padded_content_wrapper">
+                </div>
+            </div>
+
         </div>
 
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -115,7 +125,7 @@
             <ul class="bar_list">
                 {{#each this}}
                     <li>
-                        <a> 
+                        <a href="#lists_detail" class="page_link"> 
                             <h2>{{ this.name }} ({{this.length}})</h2>
                             <span>{{ this.people }}</span>
                             <div class="chevron chev-right"></div>
