@@ -422,11 +422,11 @@ a:link {
     text-shadow: 0px 1px #fff;
 }
 
-.tab_content {
+.tab_content div {
     display: none;
 }
 
-.tab_content.active {
+.tab_content .active {
     display: block;
 }
 

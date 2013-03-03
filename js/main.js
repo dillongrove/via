@@ -118,6 +118,26 @@ $(document).ready(function(){
         }
     })
 
+    /* bind tab switching events */
+    $(".tabbed_content_wrapper").on("click", ".tab", function(e){
+        e.preventDefault();
+        if($(this).hasClass("active")){
+            /* a tab that is already active was clicked, return */
+            return;
+        } else {
+            var tab_wrapper = $(this).parents(".tabbed_content_wrapper");
+
+            /* hide the existing tab content and show the new one */
+            tab_wrapper.find(".tab_content div").removeClass("active");
+            var tab_content_to_show = $(e.target.hash);
+            tab_content_to_show.addClass("active");
+
+            /* remove active class from all top tabs and add it back to the one we just clicked */
+            tab_wrapper.find(".top_tabs a").removeClass("active");
+            $(this).addClass("active");
+        }
+    })
+
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
         var comma_list = people.map(function(person){return person.first}).join(", ");
