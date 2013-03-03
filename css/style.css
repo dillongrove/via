@@ -182,7 +182,6 @@ a:link {
     padding: 1.75em;
     padding-bottom: 6.5em;
     margin-top: 2.6em;
-    
 }
 
 .bar_list_wrapper {
@@ -323,23 +322,54 @@ a:link {
 }
 
 /* picture box */
+.picture_boxes_wrapper {
+    text-align: center;
+    padding: 1em;
+    padding-bottom: 6.5em;
+    margin-top: 2.6em;
+}
+
 .picture_box {
-    height: 6em;
-    width: 9.2em;
+    width: 8.6em;
     background-color: #f0f0f0;
     box-shadow: 0px 0px 8px #aaa;
     display: inline-block;
+    margin: .6em;
+
+    background: #f0f0f0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f0f0f0 67%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(67%,#f0f0f0), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f0f0f0 67%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f0f0f0 67%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f0f0f0 67%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f0f0f0 67%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+    border-top: 1px solid #eee;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+
+    overflow: hidden;
+
 }
 
 .picture_box .picture {
     display: block;
     background-color: #ccc;
-    height: 4em;
+    height: 8.6em;
 }
 
 .picture_box .info {
     text-align: left;
     padding: .6em;
+    box-shadow: inset 0px -2px 8px #eee;
+    background-image: url("../images/noise.png");
+    text-shadow: 0px 1px #fff;
+    color: #444;
+    line-height: 20px;
+    border-top: 1px solid white;
+
 }
 
 /* transitions */

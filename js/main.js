@@ -15,48 +15,60 @@ var Via = {
         { name: "Work Friends",
           people: [
             { first: "Brandon",
-              last: "Kase"
+              last: "Kase",
+              pic_url: "brandon.jpg"
             },
             { first: "Tomer",
               last: "Borenstein",
+              pic_url: "tomer.jpg"
             },
             { first: "Arthur",
               last: "Lee",
+              pic_url: "arthur.jpg"
             },
             { first: "Evan",
-              last: "Shapiro"
+              last: "Shapiro",
+              pic_url: "evan.jpg"
             },
             { first: "Chris",
               last: "Lee",
+              pic_url: "chris.jpg"
             },
             { first: "Liz",
-              last: "Keller"
+              last: "Keller",
+              pic_url: "liz.jpg"
             }
           ]
         },
         { name: "College Friends",
           people: [
             { first: "Mike",
-              last: "Darcy"
+              last: "Darcy",
+              pic_url: "mike.jpg"
             },
             { first: "Peter",
               last: "Marino",
+              pic_url: "peter.jpg"
             },
             { first: "Nick",
               last: "LaGrow",
+              pic_url: "nick.jpg"
             }
           ]
         },
         { name: "Interaction Design Friends",
           people: [
             { first: "Elina",
-              last: "Kim"
+              last: "Kim",
+              pic_url: "elina.jpg"
             },
             { first: "Soyeon",
               last: "Hwang",
+              pic_url: "soyeon.jpg"
             },
             { first: "Lisa",
               last: "Imas",
+              pic_url: "lisa.jpg"
             }
           ]
         }
@@ -175,9 +187,6 @@ function load_content(nextPage, e){
             var list_id = $(event_target).data().id;
             content = get_html("list_detail_template", Via.lists[list_id]);
             load_target = $(nextPage);
-            callback = function(){
-                console.log("callback");
-            }
             break;
     }
 

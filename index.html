@@ -140,7 +140,7 @@
                 <a href="#" class="back"><div class="chevron"></div></a>
                 <h1>{{ name }}</h1>
             </div>
-            <div class="padded_content_wrapper">
+            <div class="picture_boxes_wrapper">
                 {{#each people}}
                     {{> person}}
                 {{/each}}
@@ -149,9 +149,9 @@
 
         <script id="person_partial" type="text/x-handlebars-template">
             <div class="picture_box">
-                <div class="picture"></div>
+                <img class="picture" src="images/people/{{ pic_url }}">
                 <div class="info">
-                    {{first}}
+                    {{first}}<br>{{last}}
                 </div>
             </div>
         </script>
