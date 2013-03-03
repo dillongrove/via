@@ -121,7 +121,7 @@
                 {{#each this}}
                     <li>
                         <a href="#list_detail" class="page_link" data-id="{{@index}}"> 
-                            <h2>{{ this.name }} ({{this.length}})</h2>
+                            <h2>{{ this.name }} ({{#count this.people}}{{/count}})</h2>
                             <span>
                                 {{#commaSeparatedNames people}}
                                 {{/commaSeparatedNames}}

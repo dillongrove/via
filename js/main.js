@@ -13,7 +13,6 @@ if(navigator.standalone != undefined && !!!navigator.standalone){
 var Via = {
     lists: [
         { name: "Work Friends",
-          length: 6,
           people: [
             { first: "Brandon",
               last: "Kase"
@@ -36,7 +35,6 @@ var Via = {
           ]
         },
         { name: "College Friends",
-          length: 3,
           people: [
             { first: "Mike",
               last: "Darcy"
@@ -50,7 +48,6 @@ var Via = {
           ]
         },
         { name: "Interaction Design Friends",
-          length: 3,
           people: [
             { first: "Elina",
               last: "Kim"
@@ -112,6 +109,10 @@ $(document).ready(function(){
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
         return people.map(function(person){return person.first}).join(", ");
+    });
+
+    Handlebars.registerHelper("count", function(list) {
+        return list.length;
     });
 
     /* on app start, show the routes page */
