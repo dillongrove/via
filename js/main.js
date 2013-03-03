@@ -46,6 +46,7 @@ $(document).ready(function(){
         $(e.target).parent().addClass("tab_selected");
 
         var nextPage = $(e.target.hash);
+        load_content(nextPage, e);
         transition(nextPage, "fade");
     });
 
@@ -54,6 +55,7 @@ $(document).ready(function(){
         e.preventDefault();
 
         var nextPage = $(e.target.hash);
+        load_content(nextPage, e);
         transition(nextPage, "push");
     });
 
@@ -69,14 +71,6 @@ $(document).ready(function(){
 
     /* on app start, show the routes page */
     transition($("#routes_page"), "show");
-
-    /* testing handlebars rendering, will remove later */
-    var source   = $("#lists_template").html();
-    var template = Handlebars.compile(source);
-    var context  = Via.lists;
-    var html     = template(context);
-
-    $("#lists_page").append(html);
 })
 
 function transition(toPage, type, reverse) {
@@ -108,6 +102,32 @@ function transition(toPage, type, reverse) {
         fromPage.removeClass("current");
         return;
     }
+}
+
+/* a load function to simulate responses from a server */
+function load_content(nextPage, e){
+    var page_to_load = e.target.hash.slice(1);
+    var load_target = $(nextPage);
+    var content;
+    
+    switch(page_to_load) {
+        case "lists_page":
+            content = get_html("lists_template", Via.lists);
+            break;
+        case "list_detail":
+            break;
+    }
+
+    if(content){
+        $(load_target).append(content);
+    }
+}
+
+function get_html(templateID, context){
+    var source = $("#" + templateID).html();
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    return html;
 }
 
 
