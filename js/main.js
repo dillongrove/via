@@ -106,15 +106,18 @@ function transition(toPage, type, reverse) {
 
 /* a load function to simulate responses from a server */
 function load_content(nextPage, e){
-    var page_to_load = e.target.hash.slice(1);
+    var event_target = e.target;
+    var page_to_load = event_target.hash.slice(1);
     var load_target = $(nextPage);
     var content;
-    
+
     switch(page_to_load) {
         case "lists_page":
             content = get_html("lists_template", Via.lists);
             break;
         case "list_detail":
+            var list_id = $(event_target).data().id;
+            content = get_html("list_detail_template", Via.lists[list_id]);
             break;
     }
 

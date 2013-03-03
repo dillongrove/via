@@ -107,12 +107,7 @@
             </div>
 
             <div id="list_detail" class="page_wrapper">
-                <div class="top_bar">
-                    <a href="#" class="back"><div class="chevron"></div></a>
-                    <h1>List Details</h1>
-                </div>
-                <div class="padded_content_wrapper">
-                </div>
+                
             </div>
 
         </div>
@@ -125,7 +120,7 @@
             <ul class="bar_list">
                 {{#each this}}
                     <li>
-                        <a href="#list_detail" class="page_link"> 
+                        <a href="#list_detail" class="page_link" data-id="{{@index}}"> 
                             <h2>{{ this.name }} ({{this.length}})</h2>
                             <span>{{ this.people }}</span>
                             <div class="chevron chev-right"></div>
@@ -134,5 +129,17 @@
                 {{/each}}
             </ul>
         </script>
+
+        <script id="list_detail_template" type="text/x-handlebars-template">
+            <div class="top_bar">
+                <a href="#" class="back"><div class="chevron"></div></a>
+                <h1>{{ name }}</h1>
+            </div>
+            <div class="padded_content_wrapper"></div>
+            {{#each this}}
+ 
+            {{/each}}
+        </script>
+
     </body>
 </html>
