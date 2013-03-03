@@ -94,6 +94,8 @@
                     <a href="#" class="back"><div class="chevron"></div></a>
                     <h1>Lists</h1>
                 </div>
+                <div class="bar_list_wrapper">
+                </div>
             </div>
 
             <!-- secondary pages -->
@@ -138,10 +140,10 @@
                 <a href="#" class="back"><div class="chevron"></div></a>
                 <h1>{{ name }}</h1>
             </div>
-            <div class="padded_content_wrapper"></div>
-            {{#each this}}
- 
-            {{/each}}
+            <div class="padded_content_wrapper">
+                {{#commaSeparatedNames people}}
+                {{/commaSeparatedNames}}
+            </div>
         </script>
 
     </body>

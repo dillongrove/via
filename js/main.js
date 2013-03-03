@@ -155,21 +155,23 @@ function transition(toPage, type, reverse) {
 function load_content(nextPage, e){
     var event_target = e.target;
     var page_to_load = event_target.hash.slice(1);
-    var load_target = $(nextPage);
+    var load_target;
     var content;
 
     switch(page_to_load) {
         case "lists_page":
             content = get_html("lists_template", Via.lists);
+            load_target = $(nextPage).find(".bar_list_wrapper");
             break;
         case "list_detail":
             var list_id = $(event_target).data().id;
             content = get_html("list_detail_template", Via.lists[list_id]);
+            load_target = $(nextPage);
             break;
     }
 
     if(content){
-        $(load_target).append(content);
+        $(load_target).html(content);
     }
 }
 
