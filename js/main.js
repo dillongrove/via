@@ -247,6 +247,12 @@ function load_content(nextPage, e){
         case "invites_page":
             content = get_html("invites_inbox_template", Via.invites);
             load_target = $(nextPage).find("#inbox");
+            break;
+        case "invite_detail":
+            var invite_id = $(event_target).data().id;
+            content = get_html("invite_detail_template", Via.invites[invite_id]);
+            load_target = $(nextPage);
+            break;
     }
 
     if(content){

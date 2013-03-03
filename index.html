@@ -163,7 +163,7 @@
             <ul class="bar_list">
                 {{#each this}}
                     <li>
-                        <a href="#list_detail" class="page_link"> 
+                        <a href="#invite_detail" class="page_link" data-id="{{@index}}"> 
                             <h2>{{#commaSeparatedNames people}}{{/commaSeparatedNames}}</h2>
                             <span>
                                 {{place}} {{time}}
@@ -173,6 +173,13 @@
                     </li>
                 {{/each}}
             </ul>
+        </script>
+
+        <script id="invite_detail_template" type="text/x-handlebars-template">
+            <div class="top_bar">
+                <a href="#" class="back"><div class="chevron"></div></a>
+                <h1>{{place}} {{time}}</h1>
+            </div>
         </script>
 
         <script id="person_partial" type="text/x-handlebars-template">
