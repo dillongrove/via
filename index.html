@@ -141,8 +141,9 @@
                 <h1>{{ name }}</h1>
             </div>
             <div class="padded_content_wrapper">
-                {{#commaSeparatedNames people}}
-                {{/commaSeparatedNames}}
+                {{#each people}}
+                    {{#full_name this}}{{/full_name}}<br>
+                {{/each}}
             </div>
         </script>
 

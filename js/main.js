@@ -116,6 +116,10 @@ $(document).ready(function(){
         return new Handlebars.SafeString(list.length);
     });
 
+    Handlebars.registerHelper("full_name", function(person) {
+        return new Handlebars.SafeString(person.first + " " + person.last);
+    });
+
     /* on app start, show the routes page */
     transition($("#routes_page"), "show");
 })
