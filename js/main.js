@@ -120,6 +120,9 @@ $(document).ready(function(){
         return new Handlebars.SafeString(person.first + " " + person.last);
     });
 
+    /* register handlebars partials */
+    Handlebars.registerPartial("person", $("#person_partial").html());
+
     /* on app start, show the routes page */
     transition($("#routes_page"), "show");
 })

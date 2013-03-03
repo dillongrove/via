@@ -142,9 +142,13 @@
             </div>
             <div class="padded_content_wrapper">
                 {{#each people}}
-                    {{#full_name this}}{{/full_name}}<br>
+                    {{> person}}
                 {{/each}}
             </div>
+        </script>
+
+        <script id="person_partial" type="text/x-handlebars-template">
+            <div>{{first}}</div>
         </script>
 
     </body>
