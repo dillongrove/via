@@ -208,6 +208,9 @@ function load_content(nextPage, e){
             content = get_html("list_detail_template", Via.lists[list_id]);
             load_target = $(nextPage);
             break;
+        case "invites_page":
+            content = get_html("lists_template", Via.lists);
+            load_target = $(nextPage).find("#inbox");
     }
 
     if(content){
