@@ -108,11 +108,12 @@ $(document).ready(function(){
 
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
-        return people.map(function(person){return person.first}).join(", ");
+        var comma_list = people.map(function(person){return person.first}).join(", ");
+        return new Handlebars.SafeString(comma_list);
     });
 
     Handlebars.registerHelper("count", function(list) {
-        return list.length;
+        return new Handlebars.SafeString(list.length);
     });
 
     /* on app start, show the routes page */
