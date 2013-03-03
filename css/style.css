@@ -224,8 +224,8 @@ a:link {
     float: left;
     width: 2.6em;
     height: 2.6em;
-    background-color: #666;
     display: none;
+    border-right: 1px solid #555;
 }
 
 .top_bar h1 {
@@ -233,8 +233,14 @@ a:link {
     padding: .8em;
 }
 
+/* only apply this left border if the h1 is directly preceded by a displayed
+ * back button (one that hasBack)
+ */
+.top_bar .back.hasBack + h1 {
+    border-left: 1px solid #222;
+}
+
 .back.hasBack {
-    color: white;
     display: block;
 }
 
@@ -289,15 +295,31 @@ a:link {
 
 .chevron {
     background-image: url("../images/chevrons.png");
+}
+
+.bar_list .chevron {
     width: 15px;
     height: 24px;
     position: absolute;
+    right: 1em;
     top: 50%;
     margin-top: -12px;
-    background-position: center right;
-    background-size: 30px;
 
-    right: 1em;
+    background-position: top right;
+    background-size: 30px;
+    
+}
+
+.back .chevron {
+    width: 15px;
+    height: 24px;
+    position: absolute;
+    left: .8em;
+    top: 50%;
+    margin-top: -12px;
+
+    background-position: bottom left;
+    background-size: 30px;
 }
 
 /* transitions */
@@ -358,6 +380,8 @@ a:link {
 .push.out.reverse {
     -webkit-animation-name: outToRight;
 }
+
+/* show */
 
 .show.in {
     -webkit-animation-name: fade-in;
