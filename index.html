@@ -122,7 +122,10 @@
                     <li>
                         <a href="#list_detail" class="page_link" data-id="{{@index}}"> 
                             <h2>{{ this.name }} ({{this.length}})</h2>
-                            <span>{{ this.people }}</span>
+                            <span>
+                                {{#commaSeparatedNames people}}
+                                {{/commaSeparatedNames}}
+                            </span>
                             <div class="chevron chev-right"></div>
                         </a>
                     </li>

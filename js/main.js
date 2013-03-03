@@ -14,15 +14,55 @@ var Via = {
     lists: [
         { name: "Work Friends",
           length: 6,
-          people: "Brandon, Tomer, Arthur, Evan, Chris, Liz" 
+          people: [
+            { first: "Brandon",
+              last: "Kase"
+            },
+            { first: "Tomer",
+              last: "Borenstein",
+            },
+            { first: "Arthur",
+              last: "Lee",
+            },
+            { first: "Evan",
+              last: "Shapiro"
+            },
+            { first: "Chris",
+              last: "Lee",
+            },
+            { first: "Liz",
+              last: "Keller"
+            }
+          ]
         },
         { name: "College Friends",
           length: 3,
-          people: "Mike, Peter, Nick" 
+          people: [
+            { first: "Mike",
+              last: "Darcy"
+            },
+            { first: "Peter",
+              last: "Marino",
+            },
+            { first: "Nick",
+              last: "LaGrow",
+            }
+          ]
         },
         { name: "Interaction Design Friends",
           length: 3,
-          people: "Elina, Soyeon, Lisa"}
+          people: [
+            { first: "Elina",
+              last: "Kim"
+            },
+            { first: "Soyeon",
+              last: "Hwang",
+            },
+            { first: "Lisa",
+              last: "Imas",
+            }
+          ]
+        }
     ],
 }
 
@@ -68,6 +108,11 @@ $(document).ready(function(){
             transition(lastPage, "push", true);
         }
     })
+
+    /* register handlebars helpers */
+    Handlebars.registerHelper("commaSeparatedNames", function(people) {
+        return people.map(function(person){return person.first}).join(", ");
+    });
 
     /* on app start, show the routes page */
     transition($("#routes_page"), "show");
