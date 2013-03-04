@@ -206,6 +206,23 @@ input {
     -moz-box-sizing: border-box;
 }
 
+#routes_page {
+    background: #444444; /* Old browsers */
+    background: -moz-linear-gradient(top,  #444444 0%, #222222 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444444), color-stop(100%,#222222)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #444444 0%,#222222 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #444444 0%,#222222 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #444444 0%,#222222 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #444444 0%,#222222 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+
+    color: white;
+}
+
+#routes_page .padded_content_wrapper {
+    background-image: url("../images/roads.png");
+}
+
 /* only apply these margins when the content wrapper is a direct descendant of the page wrapper */
 .page_wrapper > .padded_content_wrapper {
     padding: 1.75em;
@@ -400,12 +417,11 @@ input {
 
 /* routes form */
 #logo {
-    width: 50%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
-    height: 4em;
-    background-color: #ccc;
     margin-bottom: 1.6em;
+    display: block;
 }
 /*
 #routes_form {
