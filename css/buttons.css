@@ -2,7 +2,8 @@
   font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   padding: 7px 0 8px 0;
   text-align: center;
-  width: 4em; 
+  width: 4em;
+  display: block;
 }
 
 .button_large {
