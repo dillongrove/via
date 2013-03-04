@@ -54,16 +54,16 @@ input {
     width: 100%;
 }
 
-.full_width.input-append input, .full_width .input-prepend input {
+.full_width input {
+    width: 100%;
+}
+
+.full_width.input-append input, .full_width.input-prepend input {
     width: 86%;
 }
 
-.full_width.input-append button, .full_width .input-prepend button {
+.full_width.input-append button, .full_width.input-prepend button {
     width: 14%;
-}
-
-.full_width.input-append.input-prepend input {
-    width: 100%;
 }
 
 /* tab_bar */
