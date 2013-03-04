@@ -210,6 +210,9 @@ input {
 .page_wrapper > .padded_content_wrapper {
     padding: 1.75em;
     padding-bottom: 6.5em;
+}
+
+.top_bar + .padded_content_wrapper {
     margin-top: 2.6em;
 }
 
