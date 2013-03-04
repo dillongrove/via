@@ -11,6 +11,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
         <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/forms.css">
         <link rel="stylesheet" href="css/style.css">
 
         <script type="text/javascript" src="js/modernizr.2-6-2.min.js"></script>
@@ -78,25 +79,42 @@
                     <h1>Routes</h1>
                 </div>
                 <div class="padded_content_wrapper">
-                   <!-- ADD 	LOGO -->
-									<ul id ="routes_form">
-										<li>From <input class="inputbox" type="text" name="from">
-												<img class="side_button" src="images/location.png">
-										</li><br>
-										<li>Via<br><br>
-												<ul id= "via_buttons" class="cf">
-													<li><img class="via_icons" src="images/restaurant.png"></li>
-													<li><img class="via_icons" src="images/gas.png"></li>
-													<li><img class="via_icons" src="images/shopping.png"></li>
-													<li><img class="via_icons" src="images/pharmacy.png"></li>
-												</ul>
-												<input id="via_search" type="text" name="search">
-										</li> <br>
-										<li>To <input class="inputbox" type="text" name="to">
-											<img class="side_button" src="images/favorites.png">
-										</li><br>
-										<li> <a href="#map_page"><input type="submit" value="Route"></a> </li>
-									</ul>
+                    <div id="logo"></div>
+					<form id ="routes_form">
+                        <div class="input-append full_width">
+                            <label>From:</label>
+                            <input id="appendedInputButton" type="text">
+                            <button class="btn" type="button">Go!</button>
+                        </div>
+                        <div class="input-append full_width">
+                            <label>Via:</label>
+                            <input id="appendedInputButton" type="text">
+                            <button class="btn" type="button">Go!</button>
+                        </div>
+                        <div class="input-append full_width">
+                            <label>To:</label>
+                            <input id="appendedInputButton" type="text">
+                            <button class="btn" type="button">Go!</button>
+                        </div>
+                    </form>
+                    <!--
+					<li>From <input class="inputbox" type="text" name="from">
+							<img class="side_button" src="images/location.png">
+					</li><br>
+					<li>Via<br><br>
+							<ul id= "via_buttons" class="cf">
+								<li><img class="via_icons" src="images/restaurant.png"></li>
+								<li><img class="via_icons" src="images/gas.png"></li>
+								<li><img class="via_icons" src="images/shopping.png"></li>
+								<li><img class="via_icons" src="images/pharmacy.png"></li>
+							</ul>
+							<input id="via_search" type="text" name="search">
+					</li> <br>
+					<li>To <input class="inputbox" type="text" name="to">
+						<img class="side_button" src="images/favorites.png">
+					</li><br>
+					<li> <a href="#map_page"><input type="submit" value="Route"></a> </li>
+                    -->			
                 </div>
             </div>
 						<div id = "map_page" class="page_wrapper">
