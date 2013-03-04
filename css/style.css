@@ -218,6 +218,17 @@ input {
     -moz-box-sizing: border-box;
 }
 
+#routes_map_page {
+    background-image: url("../images/map.png");
+    background-size: 130%;
+    background-position: center center;
+}
+
+#routes_map_page .top_bar {
+    background: #444444;
+    opacity: .75;
+}
+
 #routes_page {
     background: #333333; /* Old browsers */
     background: -moz-linear-gradient(top,  #333333 0%, #060606 100%); /* FF3.6+ */
