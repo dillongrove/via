@@ -391,7 +391,15 @@ a:link {
 
 }
 
-/*routes form*/
+/* routes form */
+#logo {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 4em;
+    background-color: #ccc;
+    margin-bottom: 1.6em;
+}
 /*
 #routes_form {
 	color: #333333;
