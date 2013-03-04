@@ -181,7 +181,7 @@ $(document).ready(function(){
         var via_input = $(this).parents("ul").siblings("input");
         via_input.val(val);
 
-    })
+    });
 
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {

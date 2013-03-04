@@ -218,10 +218,15 @@ input {
     -moz-box-sizing: border-box;
 }
 
-#routes_map_page {
+#map{
+    height: 100%;
     background-image: url("../images/map.png");
-    background-size: 130%;
-    background-position: center center;
+    background-size: 125%;
+    background-position: top center;
+}
+
+#routes_map_page {
+    height: 100%;
 }
 
 #routes_map_page .top_bar {
