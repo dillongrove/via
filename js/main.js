@@ -172,6 +172,15 @@ $(document).ready(function(){
             tab_wrapper.find(".top_tabs a").removeClass("active");
             $(this).addClass("active");
         }
+    });
+
+    /* bind via buttons */
+    $("#via_buttons a").on("click", function(e){
+        e.preventDefault();
+        var val = $(this).data().value;
+        var via_input = $(this).parents("ul").siblings("input");
+        via_input.val(val);
+
     })
 
     /* register handlebars helpers */
