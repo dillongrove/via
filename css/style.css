@@ -475,6 +475,28 @@ a:link {
     margin: 0;
 }
 
+/* transitions */
+.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 300ms;
+}
+
+/* fade */
+
+.fade.in {
+    -webkit-animation-name: fade-in;
+    z-index: 10;
+}
+
+.fade.out {
+    z-index: 0;
+}
+
+@-webkit-keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 /* slide */
 .push.out {
     -webkit-animation-name: outToLeft;
