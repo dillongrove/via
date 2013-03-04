@@ -446,6 +446,7 @@ input {
 /* routes form */
 #logo {
     width: 40%;
+    max-width: 200px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.6em;
