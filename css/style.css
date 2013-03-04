@@ -66,6 +66,17 @@ input {
     width: 14%;
 }
 
+.input-prepend-above input, 
+.input-prepend-above select, 
+.input-prepend-above .uneditable-input {
+    position: relative;
+    margin-bottom: 0;
+    vertical-align: top;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
 /* tab_bar */
 
 #tab_bar, .top_bar {
