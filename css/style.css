@@ -46,20 +46,24 @@ a:link {
     z-index: 1;
 }
 
+input {
+    box-sizing: border-box;
+}
+
 .full_width {
     width: 100%;
 }
 
 .full_width.input-append input, .full_width .input-prepend input {
-    width: 80%;
+    width: 86%;
 }
 
 .full_width.input-append button, .full_width .input-prepend button {
-    width: 16%;
+    width: 14%;
 }
 
 .full_width.input-append.input-prepend input {
-    width: 99%;
+    width: 100%;
 }
 
 /* tab_bar */
