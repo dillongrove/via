@@ -224,8 +224,15 @@ $(document).ready(function(){
         var val = $(this).data().value;
         var via_input = $(this).parents("ul").siblings("input");
         via_input.val(val);
-
     });
+
+    /* bind geoloc button on routes form */
+    $(".geoloc").on("click", function(e){
+        e.preventDefault();
+        var input = $(this).siblings("input");
+        input.val("5000 Forbes Ave, Pittsburgh PA 15213");
+        return false;
+    })
 
     $("#tooltip").on("click", function(e){
         e.preventDefault();

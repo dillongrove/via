@@ -89,7 +89,7 @@
                             <div class="input-append full_width">
                                 <label>From:</label>
                                 <input placeholder="Where are you?" type="text">
-                                <button class="btn" type="button"><i class="icon-screenshot"></i></button>
+                                <button class="btn geoloc" type="button"><i class="icon-screenshot"></i></button>
                             </div>
                             <div class="input-prepend-above full_width">
                                 <label>Via:</label>
@@ -136,18 +136,22 @@
 		                                <input placeholder="Where do you want to go?" type="text">
 		                                <button class="btn" type="button"><i class="icon-heart"></i></button>
 		                            </div>
-									<div class="input-append full_width">
-		                                <label>Time:</label>
-		                                <input type="text">
-		                                <button class="btn" type="button">locate</button>
+                                </div>
+                            </form>
+                            <form class="form-inline">
+                                <div class="fieldset">
+									<div class="input-append">
+		                                <label>at...&nbsp;</label>
+		                                <input placeholder="time" class="time" type="text">
+		                                <button class="btn" type="button"><i class="icon-time"></i></button>
 		                            </div>
-									<div class="input-append full_width">
-		                                <label>Date:</label>
-		                                <input type="text">
-		                                <button class="btn" type="button">locate</button>
+									<div class="input-append">
+		                                <label>&nbsp;&nbsp;on....&nbsp;</label>
+		                                <input placeholder="date" class="date" type="text">
+		                                <button class="btn" type="button"><i class="icon-calendar"></i></button>
 		                            </div>
 		                        </div>
-		                        <a href="#routes_map_page" class="button button_large green page_link">Invite!</a>
+		                        <a href="#routes_map_page" id="invite_button" class="cf button button_large green page_link">Invite!</a>
 		                    </form>
                         </div>					
                         <div id="inbox" class="bar_list_wrapper">Inbox</div>

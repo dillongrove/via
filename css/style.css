@@ -66,6 +66,10 @@ input {
     width: 14%;
 }
 
+.input-append button, .input-prepend button {
+    width: 3.5em;
+}
+
 .input-prepend-above input, 
 .input-prepend-above select, 
 .input-prepend-above .uneditable-input {
@@ -277,8 +281,19 @@ input {
     float: right;
 }
 
-#invite_form .button {
+#invites #invite_button {
 	float: right;
+}
+
+/* eyughh very hacky but don't have time */
+#invites form.form-inline {
+    float: right;
+    position: relative;
+    left: -1px;
+}
+
+#invites form.form-inline input {
+    width: 4em;
 }
 
 #place_page .details_col {
