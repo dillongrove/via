@@ -183,6 +183,11 @@ $(document).ready(function(){
 
     });
 
+    $("#tooltip").on("click", function(e){
+        e.preventDefault();
+        return false;
+    })
+
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
         var comma_list = people.map(function(person){return person.first}).join(", ");
