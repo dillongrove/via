@@ -108,6 +108,18 @@ var Via = {
             }
           ]
         }
+    ],
+    places: [
+        { name: "Rose Tea Cafe",
+          street: "111 Main Street",
+          city: "Pittsburgh",
+          state: "PA",
+          zip: "15213",
+          rating: "3",
+          time: "2",
+          pic_url_1: "",
+          pic_url_2: "",
+        }
     ]
 }
 
@@ -265,6 +277,10 @@ function load_content(nextPage, e){
         case "invite_detail":
             var invite_id = $(event_target).data().id;
             content = get_html("invite_detail_template", Via.invites[invite_id]);
+            load_target = $(nextPage);
+            break;
+        case "place_page":
+            content = get_html("place_detail_template", Via.places[0]);
             load_target = $(nextPage);
             break;
     }
