@@ -201,8 +201,7 @@ $(document).ready(function(){
                 Via.prepopGlobals.invite_place = place_name;
                 var current_date = dateToMDY(new Date());
                 Via.prepopGlobals.invite_date = current_date;
-                var time_obj = getTimeObj(10);
-                var invite_time = time_obj.hours + ":" + time_obj.minutes;
+                var invite_time = stringFromTimeObj(getTimeObj(10));
                 Via.prepopGlobals.invite_time = invite_time;
                 Via.prepop = true;
                 break;
@@ -286,8 +285,7 @@ $(document).ready(function(){
     $(".invite_time").on("click", function(e){
         e.preventDefault();
         var input = $(this).siblings("input");
-        var time_obj = getTimeObj(10);
-        var invite_time = time_obj.hours + ":" + time_obj.minutes;
+        var invite_time = stringFromTimeObj(getTimeObj());
         input.val(invite_time);
     })
 
@@ -444,13 +442,28 @@ function getTimeObj(minutes_to_add){
     var hh = date.getHours();
     var mm = date.getMinutes();
     var ss = date.getSeconds();
-    // This line gives you 12-hour (not 24) time
-    if (hh > 12) {hh = hh - 12;}
+    var ampm = "am";
+
+    if(hh > 11){
+        ampm = "pm";
+    }
+    if (hh > 12) {
+        hh = hh - 12;
+    }
     return {
         hours: hh,
         minutes: mm,
-        seconds: ss
+        seconds: ss,
+        ampm: ampm,
     }
+}
+
+function stringFromTimeObj(time_obj){
+    console.log(time_obj);
+    if (time_obj.minutes < 10) {time_obj.minutes = "0"+time_obj.minutes;}
+    if (time_obj.sseconds < 10) {time_obj.seconds = "0"+time_obj.seconds;}
+
+    return time_obj.hours + ":" + time_obj.minutes + " " + time_obj.ampm;
 }
 
 var visits = {
