@@ -538,6 +538,7 @@ input {
     margin-right: auto;
     margin-bottom: 1.6em;
     display: block;
+    min-height: 113px;
 }
 
 #via_buttons {

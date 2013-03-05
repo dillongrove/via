@@ -57,7 +57,7 @@
 
         <!-- main nav pages -->
         <div id="pages">
-            <div id="settings_page" class="page_wrapper current">
+            <div id="settings_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
                     <h1>Settings</h1>
@@ -74,7 +74,7 @@
                 <div class="padded_content_wrapper">
                 </div>
             </div>
-            <div id="routes_page" class="page_wrapper">
+            <div id="routes_page" class="page_wrapper current">
                 <div class="padded_content_wrapper">
                     <img id="logo" src="images/logo.png"/>
 					<form id ="routes_form">
@@ -265,9 +265,9 @@
                     <div class="rating_stars stars{{rating}}"></div>
                     <div class="est_time">2-10 min</div>
                     {{street}}<br>
-                    {{city}}, {{state}} {{zip}}
+                    {{city}}, {{state}} {{zip}}<br>
+                    <a href="tel:+{{phone}}">{{phone}}</a>
                 </section>
-                <div class="button button_large green">Call</div>
                 <div class="button button_large green">Invite</div>
                 <div class="button button_large green">Add to Route</div>
             </div>
