@@ -269,7 +269,7 @@ input {
     box-sizing: border-box;
 }
 
-#routes_page .fieldset {
+.fieldset {
     margin-bottom: 1.2em;
 }
 
