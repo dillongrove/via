@@ -152,7 +152,11 @@ var Via = {
             "uncle_sams_3.jpg"
           ]
         }
-    ]
+    ],
+    prepop: false,
+    prepopGlobals: {
+        invite_place: "Rose Tea Cafe",
+    }
 }
 
 $(document).ready(function(){
@@ -312,6 +316,13 @@ function load_content(nextPage, e){
         case "invites_page":
             content = get_html("invites_inbox_template", Via.invites);
             load_target = $(nextPage).find("#inbox");
+            callback = function(){
+                if(Via.prepop){
+                    var place_to_go = Via.prepopGlobals.invite_place;
+                    $("input[name='invite_place']").val(place_to_go);
+                    Via.prepop = false;
+                }
+            }
             break;
         case "invite_detail":
             var invite_id = $(event_target).data().id;
