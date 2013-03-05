@@ -259,9 +259,36 @@ $(document).ready(function(){
         return false;
     })
 
-    $("#tooltip").on("click", function(e){
+    /* bind add list button on invite form */
+    $(".invite_list").on("click", function(e){
         e.preventDefault();
+        var input = $(this).siblings("input");
+        input.val("Work Friends");
         return false;
+    });
+
+    /* bind fav button on invite form */
+    $(".invite_fav").on("click", function(e){
+        e.preventDefault();
+        var input = $(this).siblings("input");
+        input.val("Rose Tea Cafe");
+        return false;
+    });
+
+    /* bind date button on invite form */
+    $(".invite_date").on("click", function(e){
+        e.preventDefault();
+        var input = $(this).siblings("input");
+        input.val(dateToMDY(new Date()));
+    });
+
+    /* bind time button on invite form */
+    $(".invite_time").on("click", function(e){
+        e.preventDefault();
+        var input = $(this).siblings("input");
+        var time_obj = getTimeObj(10);
+        var invite_time = time_obj.hours + ":" + time_obj.minutes;
+        input.val(invite_time);
     })
 
     /* register handlebars helpers */
