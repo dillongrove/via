@@ -117,7 +117,7 @@ var Via = {
           zip: "15213",
           phone: "412-421-2238",
           rating: "3",
-          time: "2",
+          time_rating: "3",
           images: [
             "rose_tea_1.jpg",
             "rose_tea_2.jpg",
@@ -131,7 +131,7 @@ var Via = {
           zip: "15213",
           phone: "412-488-9695",
           rating: "5",
-          time: "4",
+          time_rating: "4",
           images: [
             "cafe_du_jour_1.jpg",
             "cafe_du_jour_2.jpg",
@@ -145,7 +145,7 @@ var Via = {
           zip: "15213",
           phone: "412-621-1885",
           rating: "2",
-          time: "3",
+          time_rating: "3",
           images: [
             "uncle_sams_1.jpg",
             "uncle_sams_2.jpg",
@@ -277,6 +277,31 @@ $(document).ready(function(){
     Handlebars.registerHelper("full_name", function(person) {
         return new Handlebars.SafeString(person.first + " " + person.last);
     });
+
+    Handlebars.registerHelper("est_time", function(time_rating) {
+        switch(time_rating){
+            case "0":
+                time_string = "0-5 min";
+                break;
+            case "1":
+                time_string = "5-10 min";
+                break;
+            case "2":
+                time_string = "10-20 min";
+                break;
+            case "3":
+                time_string = "20-40 min";
+                break;
+            case "4":
+                time_string = "40-60 min";
+                break;
+            case "5":
+                time_string = "60+ min";
+                break;
+        }
+
+        return time_string
+    })
 
     /* register handlebars partials */
     Handlebars.registerPartial("person", $("#person_partial").html());

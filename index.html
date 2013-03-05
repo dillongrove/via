@@ -282,7 +282,10 @@
                 <div class="details_col">
                     <section>
                         <div class="rating_stars stars{{rating}}"></div>
-                        <div class="est_time"><i class="icon-white icon-time"></i>&nbsp; 2-10 min</div><br>
+                        <div class="est_time">
+                            <i class="icon-white icon-time"></i>
+                            &nbsp; {{#est_time time_rating}}{{/est_time}}
+                        </div><br>
                         {{street}}<br>
                         {{city}}, {{state}} {{zip}}<br>
                         <a href="tel:+{{phone}}">{{phone}}</a>
