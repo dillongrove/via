@@ -277,6 +277,10 @@ input {
     float: right;
 }
 
+#invite_form .button {
+	float: right;
+}
+
 /* only apply these margins when the content wrapper is a direct descendant of the page wrapper */
 .page_wrapper > .padded_content_wrapper {
     padding: 1.75em;
