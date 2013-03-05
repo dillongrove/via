@@ -239,8 +239,21 @@ input {
     width: 31px;
     background-image: url("../images/map_marker.png");
     position: absolute;
-    top: 4em;
-    left: 4em;
+}
+
+#marker1 {
+    top: 200px;
+    left: 235px;
+}
+
+#marker2 {
+    top: 150px;
+    left: 280px;
+}
+
+#marker3 {
+    top: 290px;
+    left: 240px;
 }
 
 #routes_map_page {
