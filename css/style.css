@@ -235,9 +235,9 @@ input {
 }
 
 #map .place_pin {
-    height: 20px;
-    width: 20px;
-    background-color: red;
+    height: 37px;
+    width: 31px;
+    background-image: url("../images/map_marker.png");
     position: absolute;
     top: 4em;
     left: 4em;
