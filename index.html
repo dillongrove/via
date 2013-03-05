@@ -56,8 +56,10 @@
             </li>
         </ul>
 
-        <!-- main nav pages -->
         <div id="pages">
+            <!-- #############  MAIN PAGES ############# -->
+
+            <!-- Settings Page -->
             <div id="settings_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
@@ -67,6 +69,8 @@
                     <a href="#settings_page-2" class="page_link">Page 1-2</a>
                 </div>
             </div>
+
+            <!-- Favorites Page -->
             <div id="favorites_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
@@ -75,6 +79,8 @@
                 <div class="padded_content_wrapper">
                 </div>
             </div>
+
+            <!-- Routes Page -->
             <div id="routes_page" class="page_wrapper current">
                 <div class="padded_content_wrapper">
                     <img id="logo" src="images/logo.png"/>
@@ -104,6 +110,8 @@
                     </form>		
                 </div>
             </div>
+
+            <!-- Invites Page -->
             <div id="invites_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
@@ -146,6 +154,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- List Pages Page -->
             <div id="lists_page" class="page_wrapper bar_list_page">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
@@ -155,7 +165,8 @@
                 </div>
             </div>
 
-            <!-- secondary pages -->
+            <!-- #############  SECONDARY PAGES ############# -->
+
             <div id="settings_page-2" class="page_wrapper">
                 <div class="top_bar">
                     <a href="#" class="back"><div class="chevron"></div></a>
@@ -189,6 +200,7 @@
 
         </div>
 
+        <!-- JS imports -->
         <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
@@ -255,28 +267,28 @@
         </script>
 
         <script id="place_detail_template" type="text/x-handlebars-template">
-        <div class="top_bar">
-            <a href="#" class="back"><div class="chevron"></div></a>
-            <h1>{{name}}</h1>
-        </div>
-        <div class="padded_content_wrapper cf">
-            <div class="details_col">
-                <section>
-                    <div class="rating_stars stars{{rating}}"></div>
-                    <div class="est_time">2-10 min</div>
-                    {{street}}<br>
-                    {{city}}, {{state}} {{zip}}<br>
-                    <a href="tel:+{{phone}}">{{phone}}</a>
-                </section>
-                <div class="button button_large green">Invite</div>
-                <div class="button button_large green">Add to Route</div>
+            <div class="top_bar">
+                <a href="#" class="back"><div class="chevron"></div></a>
+                <h1>{{name}}</h1>
             </div>
-            <div class="image_col">
-                {{#each images}}
-                    <img src="images/places/{{this}}"/>
-                {{/each}}
+            <div class="padded_content_wrapper cf">
+                <div class="details_col">
+                    <section>
+                        <div class="rating_stars stars{{rating}}"></div>
+                        <div class="est_time">2-10 min</div>
+                        {{street}}<br>
+                        {{city}}, {{state}} {{zip}}<br>
+                        <a href="tel:+{{phone}}">{{phone}}</a>
+                    </section>
+                    <div class="button button_large green">Invite</div>
+                    <div class="button button_large green">Add to Route</div>
+                </div>
+                <div class="image_col">
+                    {{#each images}}
+                        <img src="images/places/{{this}}"/>
+                    {{/each}}
+                </div>
             </div>
-        </div>
         </script>
 
     </body>
