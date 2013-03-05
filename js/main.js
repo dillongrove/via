@@ -115,12 +115,41 @@ var Via = {
           city: "Pittsburgh",
           state: "PA",
           zip: "15213",
+          phone: "412-421-2238",
           rating: "3",
           time: "2",
           images: [
             "rose_tea_1.jpg",
             "rose_tea_2.jpg",
             "rose_tea_3.jpg"
+          ]
+        },
+        { name: "Cafe du Jour",
+          street: "1107 E Carson Street",
+          city: "Pittsburgh",
+          state: "PA",
+          zip: "15213",
+          phone: "412-488-9695",
+          rating: "5",
+          time: "4",
+          images: [
+            "cafe_du_jour_1.jpg",
+            "cafe_du_jour_2.jpg",
+            "cafe_du_jour_3.jpg"
+          ]
+        },
+        { name: "Uncle Sam's Sandwich Bar",
+          street: "2010 Oakland Ave",
+          city: "Pittsburgh",
+          state: "PA",
+          zip: "15213",
+          phone: "412-621-1885",
+          rating: "2",
+          time: "3",
+          images: [
+            "uncle_sams_1.jpg",
+            "uncle_sams_2.jpg",
+            "uncle_sams_3.jpg"
           ]
         }
     ]
@@ -283,7 +312,7 @@ function load_content(nextPage, e){
             load_target = $(nextPage);
             break;
         case "place_page":
-            content = get_html("place_detail_template", Via.places[0]);
+            content = get_html("place_detail_template", Via.places[2]);
             load_target = $(nextPage);
             break;
     }
