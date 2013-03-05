@@ -356,7 +356,8 @@ function load_content(nextPage, e){
             load_target = $(nextPage);
             break;
         case "place_page":
-            content = get_html("place_detail_template", Via.places[2]);
+            var place_id = $(event_target).data().id;
+            content = get_html("place_detail_template", Via.places[place_id]);
             load_target = $(nextPage);
             break;
     }
