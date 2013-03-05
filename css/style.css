@@ -335,6 +335,16 @@ input {
 
 .est_time {
     margin-bottom: .5em;
+    background-color: #444;
+    display: inline-block;
+    padding: .2em .5em;
+    color: white;
+    border-radius: .4em;
+}
+
+.est_time i {
+    position: relative;
+    top: 1px;
 }
 
 .rating_stars {
