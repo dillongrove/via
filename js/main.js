@@ -194,7 +194,7 @@ $(document).ready(function(){
 
         switch(fromButton){
             case "invite_button":
-                
+                $("#invites input").val("");
                 break;
             case "invite_to_place":
                 var place_name = $(this).parents("#place_page").find(".top_bar h1").text()
