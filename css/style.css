@@ -78,6 +78,10 @@ input {
     margin-bottom: 10px;
 }
 
+.fieldset {
+    margin-bottom: 1.2em;
+}
+
 /* tab_bar */
 
 #tab_bar, .top_bar {
@@ -269,10 +273,6 @@ input {
     box-sizing: border-box;
 }
 
-.fieldset {
-    margin-bottom: 1.2em;
-}
-
 #routes_form .button {
     float: right;
 }
@@ -280,6 +280,63 @@ input {
 #invite_form .button {
 	float: right;
 }
+
+#place_page .details_col {
+    float: left;
+    width: 58%;
+}
+
+#place_page .details_col .button {
+    width: 100%;
+    margin-bottom: .5em;
+    box-sizing: border-box;
+}
+
+#place_page .image_col {
+    float: right;
+    width: 38%;
+}
+
+#place_page .image_col img {
+    width: 96%;
+    padding: 4%;
+    background-color: white;
+    box-shadow: 0px 0px 4px #ccc;
+    margin-bottom: .5em;
+}
+
+#place_page section {
+    padding: .7em;
+    background-color: white;
+    box-shadow: 0px 0px 4px #ccc;
+    margin-bottom: 1em;
+    color: #666;
+    line-height: 22px;
+}
+
+.est_time {
+    margin-bottom: .5em;
+}
+
+.rating_stars {
+    width: 87px;
+    height: 17px;
+    background-image: url("../images/rating_stars_small.png");
+    background-repeat:no-repeat;
+    margin-bottom: .7em;
+}
+
+.stars5 {background-position: 0px 0px;}
+.stars45 {background-position: 0px -17px;}
+.stars4 {background-position: 0px -34px;}
+.stars35 {background-position: 0px -51px;}
+.stars3 {background-position: 0px -68px;}
+.stars25 {background-position: 0px -85px;}
+.stars2 {background-position: 0px -102px;}
+.stars15 {background-position: 0px -119px;}
+.stars1 {background-position: 0px -136px;}
+.stars05 {background-position: 0px -153px;}
+.stars0 {background-position: 0px -170px;}
 
 /* only apply these margins when the content wrapper is a direct descendant of the page wrapper */
 .page_wrapper > .padded_content_wrapper {

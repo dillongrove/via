@@ -257,9 +257,25 @@
         <script id="place_detail_template" type="text/x-handlebars-template">
         <div class="top_bar">
             <a href="#" class="back"><div class="chevron"></div></a>
-            <h1>Place Page Template</h1>
+            <h1>{{name}}</h1>
         </div>
-        <div class="padded_content_wrapper">
+        <div class="padded_content_wrapper cf">
+            <div class="details_col">
+                <section>
+                    <div class="rating_stars stars{{rating}}"></div>
+                    <div class="est_time">2-10 min</div>
+                    {{street}}<br>
+                    {{city}}, {{state}} {{zip}}
+                </section>
+                <div class="button button_large green">Call</div>
+                <div class="button button_large green">Invite</div>
+                <div class="button button_large green">Add to Route</div>
+            </div>
+            <div class="image_col">
+                {{#each images}}
+                    <img src="images/places/{{this}}"/>
+                {{/each}}
+            </div>
         </div>
         </script>
 

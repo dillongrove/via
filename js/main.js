@@ -117,8 +117,11 @@ var Via = {
           zip: "15213",
           rating: "3",
           time: "2",
-          pic_url_1: "",
-          pic_url_2: "",
+          images: [
+            "rose_tea_1.jpg",
+            "rose_tea_2.jpg",
+            "rose_tea_3.jpg"
+          ]
         }
     ]
 }
