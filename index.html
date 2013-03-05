@@ -132,26 +132,29 @@
 		                                <button class="btn" type="button"><i class="icon-plus"></i></button>
 		                            </div>
 									<div class="input-append full_width">
-		                                <label>to...</label>
+		                                <label>to:</label>
 		                                <input name="invite_place" placeholder="Where do you want to go?" type="text">
 		                                <button class="btn" type="button"><i class="icon-heart"></i></button>
 		                            </div>
                                 </div>
                             </form>
                             <form class="form-inline">
-                                <div class="fieldset">
+                                <div class="fieldset cf">
 									<div class="input-append">
-		                                <label>at...&nbsp;</label>
-		                                <input placeholder="time" class="time" type="text">
+		                                <label>at:&nbsp;</label>
+		                                <input name="invite_time" placeholder="time" class="time" type="text">
 		                                <button class="btn" type="button"><i class="icon-time"></i></button>
 		                            </div>
+                                </div>
+                                <div class="fieldset cf">
 									<div class="input-append">
-		                                <label>&nbsp;&nbsp;on....&nbsp;</label>
-		                                <input placeholder="date" class="date" type="text">
+		                                <label>&nbsp;&nbsp;on:&nbsp;</label>
+		                                <input name="invite_date" placeholder="date" class="date" type="text">
 		                                <button class="btn" type="button"><i class="icon-calendar"></i></button>
 		                            </div>
 		                        </div>
-		                        <a href="#routes_map_page" id="invite_button" class="cf button button_large green page_link">Invite!</a>
+                                <div class="cf"></div>
+		                        <a href="#routes_page" id="invite_button" class="cf button button_large green page_link">Invite!</a>
 		                    </form>
                         </div>					
                         <div id="inbox" class="bar_list_wrapper">Inbox</div>
@@ -284,8 +287,8 @@
                         {{city}}, {{state}} {{zip}}<br>
                         <a href="tel:+{{phone}}">{{phone}}</a>
                     </section>
-                    <div class="button button_large green">Invite</div>
-                    <div class="button button_large green">Add to Route</div>
+                    <a href="#invites_page" id="invite_to_place" class="button button_large green page_link">Invite</a>
+                    <a href="#routes_map_page" id="add_place_to_route" class="button button_large green">Add to Route</a>
                 </div>
                 <div class="image_col">
                     {{#each images}}

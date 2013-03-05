@@ -155,7 +155,9 @@ var Via = {
     ],
     prepop: false,
     prepopGlobals: {
-        invite_place: "Rose Tea Cafe",
+        invite_place: "",
+        invite_date: "",
+        invite_time: "",
     }
 }
 
@@ -186,6 +188,25 @@ $(document).ready(function(){
     /* bind all other page links */
     $("#pages").on("click", "a.page_link", function(e){
         e.preventDefault();
+
+        var fromButton = $(this).attr("id");
+        console.log(fromButton);
+
+        switch(fromButton){
+            case "invite_button":
+                
+                break;
+            case "invite_to_place":
+                var place_name = $(this).parents("#place_page").find(".top_bar h1").text()
+                Via.prepopGlobals.invite_place = place_name;
+                var current_date = dateToMDY(new Date());
+                Via.prepopGlobals.invite_date = current_date;
+                var time_obj = getTimeObj(10);
+                var invite_time = time_obj.hours + ":" + time_obj.minutes;
+                Via.prepopGlobals.invite_time = invite_time;
+                Via.prepop = true;
+                break;
+        }
 
         var nextPage = $(e.target.hash);
         load_content(nextPage, e);
@@ -318,8 +339,13 @@ function load_content(nextPage, e){
             load_target = $(nextPage).find("#inbox");
             callback = function(){
                 if(Via.prepop){
+                    console.log("prepopping");
                     var place_to_go = Via.prepopGlobals.invite_place;
                     $("input[name='invite_place']").val(place_to_go);
+                    var invite_date = Via.prepopGlobals.invite_date;
+                    $("input[name='invite_date']").val(invite_date);
+                    var invite_time = Via.prepopGlobals.invite_time;
+                    $("input[name='invite_time']").val(invite_time);
                     Via.prepop = false;
                 }
             }
@@ -350,6 +376,29 @@ function get_html(templateID, context){
     return html;
 }
 
+function dateToMDY(date) {
+    var d = date.getDate();
+    var m = date.getMonth() + 1;
+    var y = date.getFullYear();
+    return '' + (m<=9 ? '0' + m : m) + '/' + (d <= 9 ? '0' + d : d) + '/' + y;
+}
+
+function getTimeObj(minutes_to_add){
+    var date = new Date();
+    if(minutes_to_add != undefined){
+        date = new Date(date.getTime()+(minutes_to_add*1000*60));
+    }
+    var hh = date.getHours();
+    var mm = date.getMinutes();
+    var ss = date.getSeconds();
+    // This line gives you 12-hour (not 24) time
+    if (hh > 12) {hh = hh - 12;}
+    return {
+        hours: hh,
+        minutes: mm,
+        seconds: ss
+    }
+}
 
 var visits = {
     history: [],
