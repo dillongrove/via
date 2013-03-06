@@ -208,7 +208,7 @@ input {
     height: 1em;
     background-color: #eee;
     position: fixed;
-    top: 0;
+    top: -2em;
     left: 0;
     right: 0;
     z-index: 1;

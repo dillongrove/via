@@ -287,7 +287,19 @@ $(document).ready(function(){
         var input = $(this).siblings("input");
         var invite_time = stringFromTimeObj(getTimeObj());
         input.val(invite_time);
-    })
+    });
+
+    $("#logo").click(function(){ 
+        $("#top_notification").animate(
+            {"top": "0px"},
+             300);
+    });
+
+    $("#top_notification").click(function(){
+        $("#top_notification").animate(
+            {"top": "-2em"},
+            300);
+    });
 
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
