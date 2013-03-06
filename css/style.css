@@ -41,6 +41,13 @@ a:link {
     -webkit-touch-callout: none;
 }
 
+/* utility class to force things into the hardware accelerated pipeline,
+ * solving the annoying animation trace bug in webkit
+ */
+.hwaccel {
+    -webkit-transform: translateZ(0);
+}
+
 /* forms */
 .input-append, .input-prepend {
     z-index: 1;
@@ -224,7 +231,6 @@ input {
     background: -ms-linear-gradient(top,  #80d875 0%,#37c627 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #80d875 0%,#37c627 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80d875', endColorstr='#37c627',GradientType=0 ); /* IE6-9 */
-
 }
 
 /* Pages */
