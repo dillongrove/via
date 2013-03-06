@@ -203,6 +203,30 @@ input {
 
 }
 
+/* top notification */
+#top_notification {
+    height: 1em;
+    background-color: #eee;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: .5em .7em;
+    font-size: .8em;
+    color: white;
+
+    background: #80d875; /* Old browsers */
+    background: -moz-linear-gradient(top,  #80d875 0%, #37c627 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#80d875), color-stop(100%,#37c627)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #80d875 0%,#37c627 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #80d875 0%,#37c627 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #80d875 0%,#37c627 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #80d875 0%,#37c627 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80d875', endColorstr='#37c627',GradientType=0 ); /* IE6-9 */
+
+}
+
 /* Pages */
 #pages {
     height: 100%;
