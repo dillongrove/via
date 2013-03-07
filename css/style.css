@@ -266,6 +266,14 @@ input {
     background-position: top center;
 }
 
+#map.after_add {
+    background-image: url("../images/map_after_add.png");
+}
+
+#map.after_add .place_pin {
+    display: none;
+}
+
 #map .place_pin {
     height: 37px;
     width: 31px;
