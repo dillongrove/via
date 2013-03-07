@@ -448,13 +448,14 @@ function load_content(nextPage, e){
             break;
         case "routes_map_page":
             callback = function(){
-                if(Via.prepop){
-                    var destination = Via.prepopGlobals.destination;
-                    $("#map_destination_text").text(destination);
-                    var via_what = Via.prepopGlobals.via_what;
-                    $("#map_via_text").text(via_what);
-                    Via.prepop = false;
-                }
+                /* no check for Via.prepop here--we probably always want to 
+                 * fill in based on prepop values
+                 */
+                var destination = Via.prepopGlobals.destination;
+                $("#map_destination_text").text(destination);
+                var via_what = Via.prepopGlobals.via_what;
+                $("#map_via_text").text(via_what);
+                Via.prepop = false;
             }
             break;
         case "place_page":
