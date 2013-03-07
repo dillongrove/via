@@ -195,6 +195,7 @@ $(document).ready(function(){
         switch(fromButton){
             case "invite_button":
                 $("#invites input").val("");
+                toast_notification("invite_sent");
                 break;
             case "invite_to_place":
                 var place_name = $(this).parents("#place_page").find(".top_bar h1").text()
@@ -289,17 +290,37 @@ $(document).ready(function(){
         input.val(invite_time);
     });
 
-    $("#logo").click(function(){ 
-        $("#top_notification").animate(
+    /* holy mother of callbacks what the hell is this */
+    function toast_notification(notif_text){
+        if(notif_text === undefined){
+            // don't do anything if no notif text was provided
+            return;
+        }
+        var notif = $("#top_notification");
+        var notif_content = notif.find("#notif_content");
+        notif.animate(
             {"top": "0px"},
-             300);
-    });
-
-    $("#top_notification").click(function(){
-        $("#top_notification").animate(
-            {"top": "-2em"},
-            300);
-    });
+            { duration: 300,
+              complete: function(){
+                $(this).animate(
+                    {"top": "0px"},
+                    { duration: 3000,
+                      complete: function(){
+                        $(this).animate(
+                          {"top": "-2em"},
+                          { duration: 300,
+                            complete: function(){
+                                notif_content.text(notif_text);
+                            }
+                          }
+                        );
+                      }
+                    }
+                );
+              }
+            }
+        );
+    };
 
     /* register handlebars helpers */
     Handlebars.registerHelper("commaSeparatedNames", function(people) {
