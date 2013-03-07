@@ -191,21 +191,30 @@ $(document).ready(function(){
         e.preventDefault();
 
         var fromButton = $(this).attr("id");
-        console.log(fromButton);
+        var cancel = false;
 
         switch(fromButton){
             case "invite_button":
+                if (($("input[name='invite_who']").val() == "") ||
+                   ($("input[name='invite_place']").val() == "") ||
+                   ($("input[name='invite_date']").val() == "") ||
+                   ($("input[name='invite_time']").val() == "")) {
+                    toast_notification("bad", "Please fill in all fields", 0, 2000);
+                    return;
+                }
+
+                setTimeout(function(){
+                    $("#invites input").val("");
+                }, 300);
+                toast_notification("good", "Invite Sent", 1000, 3000);
+
+                break;
                 /* clear all input values 300 ms after button clicked (so we 
                  * don't do it in front of the user eyes during the transition)
                  * Probably would want to do this by either keeping a global
                  * transition time var or maybe in the end animation handler
                  * but this will be fine for now 
                  */
-                setTimeout(function(){
-                    $("#invites input").val("");
-                }, 300);
-                toast_notification("good", "Invite Sent", 1000, 3000);
-                break;
             case "invite_to_place":
                 var place_name = $(this).parents("#place_page").find(".top_bar h1").text();
                 Via.prepopGlobals.invite_place = place_name;
@@ -231,9 +240,11 @@ $(document).ready(function(){
                 break;
         }
 
-        var nextPage = $(e.target.hash);
-        load_content(nextPage, e);
-        transition(nextPage, "push");
+        if(!cancel){
+            var nextPage = $(e.target.hash);
+            load_content(nextPage, e);
+            transition(nextPage, "push");
+        }
     });
 
     /* bind back button click event */
@@ -327,6 +338,7 @@ $(document).ready(function(){
 
         var notif_content = notif.find(".notif_content");
         notif_content.text(notif_text);
+
 
         notif.delay(initial_delay).animate(
             {"top": "0px"},
