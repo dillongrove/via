@@ -336,6 +336,11 @@ $(document).ready(function(){
 
         var notif = $(".notification." + type);
 
+        // don't try to animate it again if it's already animating
+        if($(notif).is(":animated")){
+            return;
+        }
+
         var notif_content = notif.find(".notif_content");
         notif_content.text(notif_text);
 
