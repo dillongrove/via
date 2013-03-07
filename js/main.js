@@ -195,7 +195,12 @@ $(document).ready(function(){
 
         switch(fromButton){
             case "invite_button":
-                $("#invites input").val("");
+                /* clear all input values 300 ms after button clicked (so we 
+                 * don't do it in front of the user eyes during the transition)
+                 */
+                setTimeout(function(){
+                    $("#invites input").val("");
+                }, 300);
                 toast_notification("Invite Sent", 1000);
                 break;
             case "invite_to_place":
