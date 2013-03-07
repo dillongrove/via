@@ -213,7 +213,13 @@ $(document).ready(function(){
                 var via_what = $(this).parents("#routes_form").find("#via_what").val();
                 Via.prepopGlobals.via_what = via_what;
                 Via.prepop = true;
-                console.log(Via.prepopGlobals);
+                /* go button being clicked means a new search is happening, so let's reset the map
+                 * back to it's normal state (before_add);
+                 */
+                 setMapState("before_add");
+                break;
+            case "add_place_to_route":
+                setMapState("after_add");
                 break;
         }
 
@@ -517,6 +523,18 @@ function stringFromTimeObj(time_obj){
     if (time_obj.sseconds < 10) {time_obj.seconds = "0"+time_obj.seconds;}
 
     return time_obj.hours + ":" + time_obj.minutes + " " + time_obj.ampm;
+}
+
+function setMapState(state){
+    var map = $("#map");
+    switch(state){
+        case "before_add":
+            map.removeClass("after_add");
+            break;
+        case "after_add":
+            map.addClass("after_add");
+            break;
+    }
 }
 
 var visits = {
