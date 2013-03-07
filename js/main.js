@@ -298,7 +298,7 @@ $(document).ready(function(){
         }
         var notif = $("#top_notification");
         var notif_content = notif.find("#notif_content");
-        notif.animate(
+        notif.delay(1000).animate(
             {"top": "0px"},
             { duration: 300,
               complete: function(){
