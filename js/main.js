@@ -204,7 +204,7 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $("#invites input").val("");
                 }, 300);
-                toast_notification("Invite Sent", 1000);
+                toast_notification("good", "Invite Sent", 1000, 3000);
                 break;
             case "invite_to_place":
                 var place_name = $(this).parents("#place_page").find(".top_bar h1").text();
@@ -314,15 +314,20 @@ $(document).ready(function(){
     });
 
     /* holy mother of callbacks what the hell is this */
-    function toast_notification(notif_text, initial_delay, duration){
+    function toast_notification(type, notif_text, initial_delay, duration){
+        if(type === undefined){ type = "good"}
         if(initial_delay === undefined){ initial_delay = 0; }
         if(duration === undefined){ duration = 3000; }
         if(notif_text === undefined){
             // don't do anything if no notif text was provided
             return;
         }
-        var notif = $("#top_notification");
-        var notif_content = notif.find("#notif_content");
+
+        var notif = $(".notification." + type);
+
+        var notif_content = notif.find(".notif_content");
+        notif_content.text(notif_text);
+
         notif.delay(initial_delay).animate(
             {"top": "0px"},
             { duration: 300,
@@ -335,7 +340,7 @@ $(document).ready(function(){
                           {"top": "-3em"},
                           { duration: 300,
                             complete: function(){
-                                notif_content.text(notif_text);
+                                notif_content.text("");
                             }
                           }
                         );
