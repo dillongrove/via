@@ -307,7 +307,7 @@ $(document).ready(function(){
                     { duration: 3000,
                       complete: function(){
                         $(this).animate(
-                          {"top": "-2em"},
+                          {"top": "-3em"},
                           { duration: 300,
                             complete: function(){
                                 notif_content.text(notif_text);
@@ -422,7 +422,6 @@ function load_content(nextPage, e){
             load_target = $(nextPage).find("#inbox");
             callback = function(){
                 if(Via.prepop){
-                    console.log("prepopping");
                     var place_to_go = Via.prepopGlobals.invite_place;
                     $("input[name='invite_place']").val(place_to_go);
                     var invite_date = Via.prepopGlobals.invite_date;
@@ -492,7 +491,6 @@ function getTimeObj(minutes_to_add){
 }
 
 function stringFromTimeObj(time_obj){
-    console.log(time_obj);
     if (time_obj.minutes < 10) {time_obj.minutes = "0"+time_obj.minutes;}
     if (time_obj.sseconds < 10) {time_obj.seconds = "0"+time_obj.seconds;}
 

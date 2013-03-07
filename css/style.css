@@ -212,10 +212,9 @@ input {
 
 /* top notification */
 #top_notification {
-    height: 1em;
     background-color: #eee;
     position: fixed;
-    top: -2em;
+    top: -3em;
     left: 0;
     right: 0;
     z-index: 1;
