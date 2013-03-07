@@ -203,18 +203,18 @@ $(document).ready(function(){
                     return;
                 }
 
-                setTimeout(function(){
-                    $("#invites input").val("");
-                }, 300);
-                toast_notification("good", "Invite Sent", 1000, 3000);
-
-                break;
                 /* clear all input values 300 ms after button clicked (so we 
                  * don't do it in front of the user eyes during the transition)
                  * Probably would want to do this by either keeping a global
                  * transition time var or maybe in the end animation handler
                  * but this will be fine for now 
                  */
+                setTimeout(function(){
+                    $("#invites input").val("");
+                }, 300);
+                toast_notification("good", "Invite Sent", 1000, 3000);
+
+                break;
             case "invite_to_place":
                 var place_name = $(this).parents("#place_page").find(".top_bar h1").text();
                 Via.prepopGlobals.invite_place = place_name;
