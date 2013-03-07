@@ -210,6 +210,8 @@ $(document).ready(function(){
             case "go":
                 var destination_name = $(this).parents("#routes_form").find("#destination").val();
                 Via.prepopGlobals.destination = destination_name;
+                var via_what = $(this).parents("#routes_form").find("#via_what").val();
+                Via.prepopGlobals.via_what = via_what;
                 Via.prepop = true;
                 console.log(Via.prepopGlobals);
                 break;
@@ -448,7 +450,9 @@ function load_content(nextPage, e){
             callback = function(){
                 if(Via.prepop){
                     var destination = Via.prepopGlobals.destination;
-                    $("#routes_map_page .top_bar h1").text(destination);
+                    $("#map_destination_text").text(destination);
+                    var via_what = Via.prepopGlobals.via_what;
+                    $("#map_via_text").text(via_what);
                     Via.prepop = false;
                 }
             }

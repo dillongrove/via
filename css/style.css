@@ -294,7 +294,11 @@ input {
 
 #routes_map_page .top_bar {
     background: #444444;
-    opacity: .75;
+    opacity: .90;
+}
+
+#routes_map_page .top_bar h1 span {
+    color: #00EE00;
 }
 
 #routes_page {

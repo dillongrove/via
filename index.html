@@ -104,7 +104,7 @@
                                     <li><a href="#" data-value="Shopping">Shopping</a></li>
                                     <li><a href="#" data-value="Pharmacy">Pharmacy</a></li>
                                 </ul>
-                                <input placeholder="What do you want along the way?" type="text">
+                                <input id="via_what" placeholder="What do you want along the way?" type="text">
                             </div>
                             <div class="full_width">
                                 <label>To:</label>
@@ -199,7 +199,7 @@
             <div id="routes_map_page" class="page_wrapper">
                 <div class="top_bar cf">
                     <a href="#" class="back"><div class="chevron"></div></a>
-                    <h1>Routes Map Page</h1>
+                    <h1>To: <span id="map_destination_text">?</span> via <span id="map_via_text"></span></h1>
                 </div>
                 <div id="map">
                     <a id="marker1" href="#place_page" class="place_pin page_link" data-id="0"></a>
