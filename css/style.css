@@ -497,6 +497,12 @@ input {
     padding: .8em;
 }
 
+.top_bar .button {
+    float: right;
+    margin-top: .4em;
+    margin-right: .5em;
+}
+
 /* only apply this left border if the h1 is directly preceded by a displayed
  * back button (one that hasBack)
  */
