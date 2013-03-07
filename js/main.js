@@ -158,6 +158,7 @@ var Via = {
         invite_place: "",
         invite_date: "",
         invite_time: "",
+        destination: "",
     }
 }
 
@@ -198,13 +199,19 @@ $(document).ready(function(){
                 toast_notification("invite_sent");
                 break;
             case "invite_to_place":
-                var place_name = $(this).parents("#place_page").find(".top_bar h1").text()
+                var place_name = $(this).parents("#place_page").find(".top_bar h1").text();
                 Via.prepopGlobals.invite_place = place_name;
                 var current_date = dateToMDY(new Date());
                 Via.prepopGlobals.invite_date = current_date;
                 var invite_time = stringFromTimeObj(getTimeObj(10));
                 Via.prepopGlobals.invite_time = invite_time;
                 Via.prepop = true;
+                break;
+            case "go":
+                var destination_name = $(this).parents("#routes_form").find("#destination").val();
+                Via.prepopGlobals.destination = destination_name;
+                Via.prepop = true;
+                console.log(Via.prepopGlobals);
                 break;
         }
 
@@ -437,6 +444,15 @@ function load_content(nextPage, e){
             content = get_html("invite_detail_template", Via.invites[invite_id]);
             load_target = $(nextPage);
             break;
+        case "routes_map_page":
+            callback = function(){
+                if(Via.prepop){
+                    var destination = Via.prepopGlobals.destination;
+                    $("#routes_map_page .top_bar h1").text(destination);
+                    Via.prepop = false;
+                }
+            }
+            break;
         case "place_page":
             var place_id = $(event_target).data().id;
             content = get_html("place_detail_template", Via.places[place_id]);
@@ -446,9 +462,10 @@ function load_content(nextPage, e){
 
     if(content){
         $(load_target).html(content);
-        if(callback){
-            callback();
-        }
+    }
+
+    if(callback){
+        callback();
     }
 }
 
